@@ -29,7 +29,12 @@ public class MySpringController {
 	
 	@GetMapping(value = "/get-all-emp", produces = APPLICATION_JSON_VALUE)
 	public Flux<Employee> getAllEmp() {
-		return employeeService.getAll();
+		return employeeService.getAllMyWay();
+	}
+	
+	@GetMapping(value = "/get-all-emp-data", produces = APPLICATION_JSON_VALUE)
+	public Flux<Employee> getAllEmpData() {
+		return employeeService.getAllByData();
 	}
 	
 }
